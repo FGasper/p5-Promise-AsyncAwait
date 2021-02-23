@@ -11,6 +11,7 @@ WriteMakefile(
     LICENSE      => 'perl_5',
     PREREQ_PM    => {
                      'Promise::XS' => 0.13,
+                     'Future::AsyncAwait' => 0.47,
                      'Test::More' => 0,
                      'Test::FailWarnings' => 0,
                     },
