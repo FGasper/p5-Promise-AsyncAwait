@@ -1,0 +1,8 @@
+.gitignore
+Changes
+LICENSE
+MANIFEST
+Makefile.PL
+README.md
+lib/Promise/AsyncAwait.pm
+t/anyevent.t
