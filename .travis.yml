@@ -17,12 +17,12 @@ before_install:
     - eval $(curl https://travis-perl.github.io/init) --auto
     - cpanm ExtUtils::MakeMaker
 
-matrix:
-  include:
-    - os: osx
-      perl: system
-      before_install:
-        - "curl -L http://cpanmin.us | perl - --self-upgrade"
-        - export PATH=$PATH:$HOME/perl5/bin
-        - "cpanm --verbose --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)"
-        - "cpanm --verbose Future::AsyncAwait"
+#matrix:
+#  include:
+#    - os: osx
+#      perl: system
+#      before_install:
+#        - "curl -L http://cpanmin.us | perl - --self-upgrade"
+#        - export PATH=$PATH:$HOME/perl5/bin
+#        - "cpanm --verbose --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)"
+#        - "cpanm --verbose Future::AsyncAwait"
