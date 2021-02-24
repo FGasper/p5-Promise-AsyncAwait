@@ -18,11 +18,14 @@ Promise::AsyncAwait - Async/await with promises
 
 # DESCRIPTION
 
-[Future::AsyncAwait](https://metacpan.org/pod/Future::AsyncAwait) implements JavaScript-like async/await semantics
+[Future::AsyncAwait](https://metacpan.org/pod/Future::AsyncAwait) implements JavaScript-like [async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)/[await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
+semantics
 for Perl, but it defaults to using CPAN’s [Future](https://metacpan.org/pod/Future) rather than promises.
+The two are similar but incompatible.
 
-This module wraps Future::AsyncAwait with logic that defaults to
-[Promise::XS](https://metacpan.org/pod/Promise::XS) promises rather than Future. This yields a friendlier
+Use this module for a promise-oriented async/await instead. It’s actually
+just a shim around Future::AsyncAwait that feeds it configuration options
+for [Promise::XS](https://metacpan.org/pod/Promise::XS) promises rather than Future. This yields a friendlier
 (and likely faster!) experience for those more accustomed to JavaScript
 promises than to CPAN Future.
 
