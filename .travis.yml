@@ -25,3 +25,4 @@ matrix:
         - "curl -L http://cpanmin.us | perl - --self-upgrade"
         - export PATH=$PATH:$HOME/perl5/bin
         - "cpanm --verbose --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)"
+        - "cpanm --verbose Future::AsyncAwait"
