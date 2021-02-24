@@ -27,11 +27,14 @@ Promise::AsyncAwait - Async/await with promises
 
 =head1 DESCRIPTION
 
-L<Future::AsyncAwait> implements JavaScript-like async/await semantics
+L<Future::AsyncAwait> implements JavaScript-like L<async|https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function>/L<await|https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await>
+semantics
 for Perl, but it defaults to using CPAN’s L<Future> rather than promises.
+The two are similar but incompatible.
 
-This module wraps Future::AsyncAwait with logic that defaults to
-L<Promise::XS> promises rather than Future. This yields a friendlier
+Use this module for a promise-oriented async/await instead. It’s actually
+just a shim around Future::AsyncAwait that feeds it configuration options
+for L<Promise::XS> promises rather than Future. This yields a friendlier
 (and likely faster!) experience for those more accustomed to JavaScript
 promises than to CPAN Future.
 
@@ -57,7 +60,7 @@ BEGIN {
 }
 
 sub import {
-    return __PACKAGE__->SUPER::import(
+    return $_[0]->SUPER::import(
         future_class => 'Promise::XS::Promise',
         @_[1 .. $#_],
     );
